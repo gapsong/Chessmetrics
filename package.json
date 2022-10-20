@@ -1,0 +1,36 @@
+{
+  "name": "chessmetrics",
+  "version": "1.0.0",
+  "description": "It displays all important metrics for Lichess games",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gapsong/Chessmetrics.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gapsong/Chessmetrics/issues"
+  },
+  "homepage": "https://github.com/gapsong/Chessmetrics#readme",
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "babel lib -d dist",
+    "dev": "nodemon --ignore './dist/' -e js  --exec \"npm run serve && npx browserify dist/index.js > dist/main.js\"",
+    "start": "npm run build && nodemon dist/index.js",
+    "serve": "npm run build && node dist/index.js",
+    "test": "npm run build && npx jest --testPathIgnorePatterns='dist'"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "browserify": "^17.0.0",
+    "eslint": "^8.25.0",
+    "jest": "^26.6.1",
+    "nodemon": "^1.17.5"
+  },
+  "dependencies": {
+    "chess.js": "^0.11.0",
+    "eslint-plugin-jest": "^27.1.3"
+  }
+}
